@@ -1,0 +1,130 @@
+<odoo>
+    <data>
+
+        <!--        edit header  -->
+        <template id="snippet_format_menus" inherit_id="website_sale.wizard_checkout">
+            <xpath expr="//div[@class='wizard']" position="replace">
+                <div class="wizard">
+                    <div class="progress-wizard">
+                        <a class="no-decoration" t-att-href="step&gt;=10 and '/shop/cart' or '#'">
+                            <div id="wizard-step10" style="width:25%"
+                                 t-att-class="'progress-wizard-step %s' % (step == 10 and 'active' or step&gt;10 and 'complete' or 'disabled')">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"></span>
+                                <div class="text-center progress-wizard-steplabel">Review Order</div>
+                            </div>
+                        </a>
+                        <a class="no-decoration" t-att-href="step&gt;=20 and '/shop/checkout' or '#'">
+                            <div id="wizard-step20" style="width:25%"
+                                 t-att-class="'progress-wizard-step %s' % (step == 20 and 'active' or step&gt;20 and 'complete' or 'disabled')">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"></span>
+                                <div class="text-center progress-wizard-steplabel">Address</div>
+                            </div>
+                        </a>
+                        <a class="no-decoration" t-att-href="step&gt;=20 and '/shop/feedback' or '#'">
+                            <div id="wizard-step20" style="width:25%"
+                                 t-att-class="'progress-wizard-step %s' % (step == 40 and 'active' or step&gt;40 and 'complete' or 'disabled')">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"></span>
+                                <div class="text-center progress-wizard-steplabel">Feedback</div>
+                            </div>
+                        </a>
+                        <a class="no-decoration" t-att-href="step&gt;=20 and '/shop/payment' or '#'">
+                            <div id="wizard-step20" style="width:25%"
+                                 t-att-class="'progress-wizard-step %s' % (step == 40 and 'active' or step&gt;40 and 'complete' or 'disabled')">
+                                <div class="progress-wizard-bar d-none d-md-block"/>
+                                <span class="progress-wizard-dot d-none d-md-inline-block"></span>
+                                <div class="text-center progress-wizard-steplabel">Confirm Order</div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="cart_custom" inherit_id="website_sale.cart" name="Shopping Cart">
+                        <xpath expr="//div[@id='wrap']" position="replace">
+                                            <div id="wrap">
+                    <div class="container oe_website_sale py-2">
+                        <div class="row">
+                            <div class="col-12">
+                                <t t-call="website_sale.wizard_checkout">
+                                    <t t-set="step" t-value="10"/>
+                                </t>
+                            </div>
+                            <div class="col-12 col-xl-8 oe_cart">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div t-if="abandoned_proceed or access_token" class="mt8 mb8 alert alert-info"
+                                             role="alert"> <!-- abandoned cart choices -->
+                                            <t t-if="abandoned_proceed">
+                                                <p>Your previous cart has already been completed.</p>
+                                                <p t-if="website_sale_order">Please proceed your current cart.</p>
+                                            </t>
+                                            <t t-if="access_token">
+                                                <p>This is your current cart.</p>
+                                                <p>
+                                                    <strong>
+                                                        <a t-attf-href="/shop/cart/?access_token=#{access_token}&amp;revive=squash">
+                                                            Click here
+                                                        </a>
+                                                    </strong>
+                                                    if you want to restore your previous cart. Your current cart will be
+                                                    replaced with your previous cart.
+                                                </p>
+                                                <p>
+                                                    <strong>
+                                                        <a t-attf-href="/shop/cart/?access_token=#{access_token}&amp;revive=merge">
+                                                            Click here
+                                                        </a>
+                                                    </strong>
+                                                    if you want to merge your previous cart into current cart.
+                                                </p>
+                                            </t>
+                                        </div>
+                                        <t t-call="website_sale.cart_lines"/>
+                                        <div class="clearfix"/>
+                                        <a role="button" href="/shop"
+                                           class="btn btn-secondary mb32 d-none d-xl-inline-block">
+                                            <span class="fa fa-chevron-left"/>
+                                            <span class="">Continue Shopping</span>
+                                        </a>
+                                        <a role="button"
+                                           t-if="website_sale_order and website_sale_order.website_order_line"
+                                           class="btn btn-primary float-right d-none d-xl-inline-block"
+                                           href="/shop/feedback">
+                                            <span class="">Next</span>
+                                            <span class="fa fa-chevron-right"/>
+                                        </a>
+                                        <div class="oe_structure" id="oe_structure_website_sale_cart_1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-4" id="o_cart_summary">
+                                <t t-call="website_sale.short_cart_summary"/>
+                                <div class="d-xl-none mt8">
+                                    <a role="button" href="/shop" class="btn btn-secondary mb32">
+                                        <span class="fa fa-chevron-left"/>
+                                        Continue
+                                        <span class="d-none d-md-inline">Shopping</span>
+                                    </a>
+                                    <a role="button" t-if="website_sale_order and website_sale_order.website_order_line"
+                                       class="btn btn-primary float-right" href="shop/feedback">
+                                        <span class="">Process Checkout</span>
+                                        <span class="fa fa-chevron-right"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oe_structure" id="oe_structure_website_sale_cart_2"/>
+                </div>
+
+                        </xpath>
+        </template>
+
+
+    </data>
+</odoo>

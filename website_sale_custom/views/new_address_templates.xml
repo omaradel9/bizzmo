@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+
+        <template id="feedback">
+            <t t-call="website.layout">
+                <t t-set="additional_title">Feedback</t>
+                <t t-set="no_footer" t-value="1"/>
+                <div id="wrap">
+                    <div class="container oe_website_sale py-2">
+                        <t t-set="same_shipping"
+                           t-value="bool(order.partner_shipping_id==order.partner_id or only_services)"/>
+                        <div class="row">
+                            <div class="col-12">
+                                <t t-call="website_sale.wizard_checkout">
+                                    <t t-set="step" t-value="20"/>
+                                </t>
+                            </div>
+                            <div class="col-12 col-xl-auto order-xl-2 d-none d-xl-block">
+                                <t t-call="website_sale.cart_summary">
+                                    <t t-set="redirect" t-valuef="/shop/checkout2"/>
+                                </t>
+                            </div>
+                            <div class="col-12 col-xl order-xl-1 oe_cart">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3 class="o_page_header mt8">Customer Feedback</h3>
+                                    </div>
+<!--                                    <t t-esc="order"-->
+<!--                                    />-->
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">state</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="order.order_line" t-as="order_line">
+                                                <tr>
+                                                    <th>
+                                                        <t t-esc="order_line.product_id.name"/>
+                                                    </th>
+                                                    <td><t t-esc="order_line.product_uom_qty"/></td>
+                                                    <td><t t-esc="order_line.price_unit"/></td>
+                                                    <td>@<t t-esc="order_line.marketplace_state"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="clearfix" />
+                                    <a role="button" href="/shop" class="btn btn-secondary mb32 d-none d-xl-inline-block">
+                                        <span class="fa fa-chevron-left" />
+                                        <span class="">Continue Shopping</span>
+                                    </a>
+                                    <a role="button" t-if="website_sale_order and website_sale_order.website_order_line" class="btn btn-primary float-right d-none d-xl-inline-block" href="/shop/checkout?express=1">
+                                        <span class="">Process Checkout</span>
+                                        <span class="fa fa-chevron-right" />
+                                    </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

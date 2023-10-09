@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<templates>
+  <t t-inherit="mail.MessagingMenu" t-inherit-mode="extension">
+    <xpath expr="//div[hasclass('o_MessagingMenu')]/a" position="attributes">
+      <attribute name="t-if">!marketplace_states.is_seller</attribute>
+    </xpath>
+    <xpath expr="//div[hasclass('o_MessagingMenu')]/t" position="attributes">
+      <attribute name="t-if">messagingMenu and messagingMenu.isOpen and !marketplace_states.is_seller</attribute>
+    </xpath>
+    <xpath expr="//div[hasclass('o_MessagingMenu')]" position="after">
+      <script type="text/javascript" src="/odoo_marketplace/static/src/js/activity_icon_hide.js"></script>
+    </xpath>
+  </t>
+
+
+
+
+</templates>

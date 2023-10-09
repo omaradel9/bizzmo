@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+      <record id="odoo_marketplace.wk_seller_sale_order_line_new_action" model="ir.actions.act_window">
+            <field name="domain">[('state', 'in', ['sale','done']),('marketplace_state','=','new'),('marketplace_seller_id','in',['get_marketplace_seller_id()'])]</field>
+
+      </record>
+
+
+  </data>
+</odoo>
