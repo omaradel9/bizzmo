@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 import logging
-
-from email_validator import EmailSyntaxError, EmailUndeliverableError, validate_email
-
 from odoo import _
 from odoo.http import request, route
 
