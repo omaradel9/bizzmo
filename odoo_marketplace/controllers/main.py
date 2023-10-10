@@ -125,7 +125,6 @@ class AuthSignupHome(Website):
             if 'error' not in qcontext and request.httprequest.method == 'POST':
                 try:
                     self.do_signup(qcontext)
-                    # self.passwordless_signup()
                     self.web_login(*args, **kw)
                     return website_marketplace_dashboard().account()
                 except UserError as e:
