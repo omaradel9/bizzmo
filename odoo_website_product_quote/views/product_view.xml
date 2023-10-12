@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+	
+		<!-- Product Form View Inherited -->
+		<record model="ir.ui.view" id="view_product_quote_request_form_inherited">
+			<field name="name">product.quote.request.frm.inherited</field>
+			<field name="model">product.template</field>    		
+			<field name="inherit_id" ref="product.product_template_only_form_view"/>    		
+			<field name="arch" type="xml">        					
+				<xpath expr="//div[@name='options']" position="inside">
+						<field name="quote_products"/>  
+						<label for="quote_products"/> 
+				</xpath>
+			</field>                	
+    	</record>
+
+	</data>
+</odoo>

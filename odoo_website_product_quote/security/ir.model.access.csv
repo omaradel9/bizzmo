@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quote_order_line,access_quote_order_line,odoo_website_product_quote.model_quote_order_line,,1,1,1,1
+access_quote_order,access_quote_order,odoo_website_product_quote.model_quote_order,,1,1,1,1
+access_update_quote_product,access_update_quote_product,odoo_website_product_quote.model_update_quote_product,,1,1,1,0

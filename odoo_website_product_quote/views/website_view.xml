@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="odoo_website_product_quote.quote_product_website_action" model="ir.actions.act_window">
+            <field name="name">Quote Products</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="product.product_template_tree_view"/>
+            <field name="domain">[('quote_products','=',True)]</field>
+        </record>
+        
+        <menuitem id="menu_quote_products_website" name="Quote Products" action="odoo_website_product_quote.quote_product_website_action" parent="website_sale.menu_orders" sequence="4"/>
+        
+    </data>
+</odoo>

@@ -1,0 +1,467 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_website_product_quote
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-05 05:27+0000\n"
+"PO-Revision-Date: 2023-06-05 12:26+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "%s review"
+msgstr "%s vélemény"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "%s reviews"
+msgstr "%s vélemény"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_thankyou
+msgid "&amp;times;"
+msgstr "&amp;times;"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_billing
+msgid "<b>Billing</b>"
+msgstr "<b>Számlázás</b>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid ""
+"<i class=\"fa fa-heart\" aria-hidden=\"true\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span>Wish List</span>"
+msgstr ""
+"<i class=\"fa fa-heart\" aria-hidden=\"true\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span>Kívánság lista</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "<i class=\"fa fa-shopping-cart mr-2\"/>ADD TO CART"
+msgstr "<i class=\"fa fa-shopping-cart mr-2\"/>KOSÁRBA"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.header1
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart_menu_template_header_boxed
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart_menu_template_header_centered_logo
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart_menu_template_header_hamburger_full
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart_menu_template_header_image
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart_menu_template_header_magazine
+msgid ""
+"<i class=\"fa fa-shopping-cart\"/>\n"
+"\t\t\t\t\t\tQuote Cart"
+msgstr ""
+"<i class=\"fa fa-shopping-cart\"/>\n"
+"\t\t\t\t\t\tIdézet kosár"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid ""
+"<i class=\"fa fa-signal\" aria-hidden=\"true\"/>\n"
+"                                                        <span>Compare</span>"
+msgstr ""
+"<i class=\"fa fa-signal\" aria-hidden=\"true\"/>\n"
+"                                                        <span>Hasonlítsa "
+"össze</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "<span aria-hidden=\"true\">×</span>"
+msgstr "<span aria-hidden=\"true\">×</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart
+msgid ""
+"<span class=\"\">Process Checkout</span>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span class=\"\">Fizetés folyamata</span>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_billing
+msgid ""
+"<span class=\"\">Submit Quote</span>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span class=\"\">Árajánlat benyújtása</span>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span class=\"\">Return to cart</span>"
+msgstr ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span class=\"\">Vissza a kosárba</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_billing
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart
+msgid ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"\">Continue</span>"
+msgstr ""
+"<span class=\"fa fa-chevron-left\"/>\n"
+"\t\t\t\t\t\t\t\t\t\t<span class=\"\">Folytatni</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid ""
+"<span style=\"font-size:10px;color:black;\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t(Be the first one to rate)\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>"
+msgstr ""
+"<span style=\"font-size:10px;color:black;\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t(Legyen Ön az első, aki értékel)\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid "<span> Add to Quote </span>"
+msgstr "<span> Hozzáadás az idézethez </span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid ""
+"<span> Next </span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+msgstr ""
+"<span> Következő </span>\n"
+"\t\t\t\t\t\t\t\t\t\t\t<span class=\"fa fa-chevron-right\"/>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "<span>(</span>"
+msgstr "<span>(</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "<span>)</span>"
+msgstr "<span>)</span>"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "A short description that will also appear on documents."
+msgstr "Egy rövid leírás, amely a dokumentumokon is megjelenik."
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Add one"
+msgstr "Hozzáadni egyet"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid "Add to Quote"
+msgstr "Hozzáadás az idézethez"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.update_quote_product_form_view
+msgid "Are You sure want to create quotation with selected products ?"
+msgstr "Biztosan árajánlatot szeretne készíteni a kiválasztott termékekre?"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "City"
+msgstr "Város"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Close"
+msgstr "Bezárás"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid "Compare"
+msgstr "Hasonlítsa össze"
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_res_partner
+msgid "Contact"
+msgstr "Kapcsolatba lépni"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Country"
+msgstr "Ország"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Country..."
+msgstr "Ország..."
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.update_quote_product_form_view
+msgid "Create Quotation"
+msgstr "Árajánlat létrehozása"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__create_uid
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__create_uid
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__create_uid
+msgid "Created by"
+msgstr "Készítette"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__create_date
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__create_date
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__create_date
+msgid "Created on"
+msgstr "Készült ekkor"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.update_quote_product_form_view
+msgid "Discard"
+msgstr "Eldobni"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__display_name
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__display_name
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Email"
+msgstr "Email"
+
+#. module: odoo_website_product_quote
+#: model:website.menu,name:odoo_website_product_quote.menu_quote_request
+msgid "Get Quote"
+msgstr "Idézz"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__id
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__id
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__id
+msgid "ID"
+msgstr "ID"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order____last_update
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line____last_update
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product____last_update
+msgid "Last Modified on"
+msgstr "Utolsó módosítás dátuma:"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_res_partner__last_website_quote_id
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_res_users__last_website_quote_id
+msgid "Last Online Sales Order"
+msgstr "Utolsó online értékesítési rendelés"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__write_uid
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__write_uid
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__write_uid
+msgid "Last Updated by"
+msgstr "Utoljára frissítette"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__write_date
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__write_date
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_update_quote_product__write_date
+msgid "Last Updated on"
+msgstr "Utolsó frissítés:"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__partner_id
+msgid "Partner"
+msgstr "Partner"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Phone"
+msgstr "Telefon"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__price
+msgid "Price"
+msgstr "Ár"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__product_id
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Product"
+msgstr "Termék"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "Product Documents/Attachments"
+msgstr "Termékdokumentumok/mellékletek"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "Product Name"
+msgstr "Termék név"
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_product_template
+msgid "Product Template"
+msgstr "Termék sablon"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__qty
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Quantity"
+msgstr "Mennyiség"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_billing
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Quote - Request"
+msgstr "Idézet - kérés"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order__quote_lines
+msgid "Quote Lines"
+msgstr "Idézetsorok"
+
+#. module: odoo_website_product_quote
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_quote_order_line__quote_id
+msgid "Quote Order"
+msgstr "Quote Order"
+
+#. module: odoo_website_product_quote
+#: model:ir.actions.act_window,name:odoo_website_product_quote.action_update_quote_products
+msgid "Quote Product"
+msgstr "Árajánlat a termékről"
+
+#. module: odoo_website_product_quote
+#: model:ir.actions.act_window,name:odoo_website_product_quote.quote_product_action
+#: model:ir.actions.act_window,name:odoo_website_product_quote.quote_product_website_action
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_product_product__quote_products
+#: model:ir.model.fields,field_description:odoo_website_product_quote.field_product_template__quote_products
+#: model:ir.ui.menu,name:odoo_website_product_quote.menu_quote_products
+#: model:ir.ui.menu,name:odoo_website_product_quote.menu_quote_products_website
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.update_quote_product_form_view
+msgid "Quote Products"
+msgstr "Árajánlat termékek"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Remove from cart"
+msgstr "Távolítsa el a kosárból"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Remove one"
+msgstr "Távolítson el egyet"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "Request Quote"
+msgstr "Ajánlatkérés"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_cart
+msgid "Request a Quote"
+msgstr "Árajánlatot kér"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "Review"
+msgstr "Felülvizsgálat"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "Reviews"
+msgstr "Vélemények"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "State / Province"
+msgstr "Állam / Tartomány"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Street"
+msgstr "Utca"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_thankyou
+msgid ""
+"Thank you for your Quotation Request...!!! Our Sales Team Will Get Back to "
+"you soon...!!!"
+msgstr ""
+"Köszönjük az árajánlatkérésedet...!!! Értékesítési csapatunk hamarosan "
+"jelentkezik...!!!"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote_thankyou
+msgid "Thank you!"
+msgstr "Köszönöm!"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "This combination does not exist."
+msgstr "Ez a kombináció nem létezik."
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "This product has no valid combination."
+msgstr "Ennek a terméknek nincs érvényes kombinációja."
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_in_single_product_page
+msgid "This product is no longer available."
+msgstr "Ez a termék már nem elérhető."
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_website
+msgid "Website"
+msgstr "Weboldal"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.quote
+msgid "Wish List"
+msgstr "Kívánság lista"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Your Name"
+msgstr "A neved"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.qoute_cart_lines
+msgid "Your cart is empty!"
+msgstr "Az Ön kosara üres!"
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "Zip"
+msgstr "Postai irányítószám"
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_quote_order
+msgid "quote.order"
+msgstr ""
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_quote_order_line
+msgid "quote.order.line"
+msgstr ""
+
+#. module: odoo_website_product_quote
+#: model_terms:ir.ui.view,arch_db:odoo_website_product_quote.get_quotation_request
+msgid "select..."
+msgstr "válassz..."
+
+#. module: odoo_website_product_quote
+#: model:ir.model,name:odoo_website_product_quote.model_update_quote_product
+msgid "update.quote.product"
+msgstr ""

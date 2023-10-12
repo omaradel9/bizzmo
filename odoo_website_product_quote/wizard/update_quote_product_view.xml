@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="update_quote_product_form_view">
+			<field name="name">update.quote.product.form.view</field>
+			<field name="model">update.quote.product</field>
+			<field name='arch' type='xml'>
+				<form string="Quote Products">
+					<group>
+						<group>
+							<p>Are You sure want to create quotation with selected products ?</p>
+						</group>
+					</group>
+					<footer>
+						<button string="Create Quotation" name="create_quotation_from_quote_products" type="object" class="btn-primary"/>
+						<button string="Discard" class="btn-secondary" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_update_quote_products" model="ir.actions.act_window">
+			<field name="name">Quote Product</field>
+			<field name="res_model">update.quote.product</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="odoo_website_product_quote.update_quote_product_form_view"/>
+			<field name="target">new</field>
+			<field name="binding_model_id" ref="model_product_template"/>
+		</record>
+	</data>
+</odoo>
