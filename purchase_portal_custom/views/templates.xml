@@ -1,0 +1,140 @@
+<odoo>
+    <data>
+        <template id="purchase_order_portal_content_custom" inherit_id="purchase.purchase_order_portal_content">
+
+            <xpath expr="//section[@id='details']" position="replace">
+                <section id="details" style="page-break-inside: auto;" class="mt32">
+                    <h3 id="details">Pricing</h3>
+
+                    <div class="table-responsive">
+                        <table t-att-data-order-id="order.id" t-att-data-token="order.access_token"
+                               class="table table-sm" id="purchase_order_table">
+                            <thead class="bg-100">
+                                <tr>
+                                    <th class="text-left">Products</th>
+                                    <th class="text-right">Quantity</th>
+                                    <th class="text-right">UOM</th>
+                                    <th t-if="update_dates" class="text-right">Scheduled Date</th>
+                                    <th
+                                            t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                        Unit Price
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="purchase_tbody">
+
+                                <t t-set="current_subtotal" t-value="0"/>
+                                <form t-attf-action="/my/purchase/#{order.id}/update_lines?access_token=#{order.access_token}"
+                                      method="post">
+                                    <input type="hidden" name="csrf_token"
+                                           t-att-value="request.csrf_token()"/>
+                                    <t t-foreach="order.order_line" t-as="line">
+                                        <input type="hidden" name="line_id"
+                                               t-att-value="line.id"/>
+                                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                            <td scope="col">
+                                                <input type="text" id="product_name" name="product_name"
+                                                       t-set="product_name"
+                                                       class="form-control product_name"
+                                                       t-att-value="line.name" style="pointer-events:none;"
+                                                />
+                                                <input type="hidden" name="product_id"
+                                                       t-att-value="line.product_id.id"/>
+                                            </td>
+                                            <td scope="col">
+                                                <input type="number" id="product_qty" name="product_qty"
+                                                       t-set="product_qty"
+                                                       class="form-control product_qty"
+                                                       t-att-value="line.product_qty"
+                                                />
+                                            </td>
+                                            <td scope="col">
+                                                <input type="text" id="product_uom" name="product_uom"
+                                                       t-set="product_uom"
+                                                       class="form-control product_uom"
+                                                       t-att-value="line.product_uom.name"
+                                                       style="pointer-events:none;"
+                                                />
+                                            </td>
+                                            <td scope="col">
+                                                <input type="text" id="price_unit" name="price_unit"
+                                                       t-set="price_unit"
+                                                       class="form-control price_unit"
+                                                       t-att-value="line.price_unit"
+                                                       style="pointer-events:none;"
+                                                />
+                                            </td>
+
+                                            <td scope="col">
+                                                <a class="btn btn-danger"
+                                                   t-attf-href="/my/purchase/{{order.id}}/{{line.id}}/delete">
+                                                    <span class="fa fa-trash-o"/>
+                                                    Delete
+                                                </a>
+                                            </td>
+
+
+                                        </tr>
+                                    </t>
+
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div id="total" class="row" name="total" style="page-break-inside: avoid;">
+                                        <div class="col-sm-7 col-md-5 ml-auto">
+                                            <button
+                                                    type="submit" id="to_confirm_checkbox"
+                                                    class="btn btn-default btn-primary pull-right mb32 ">
+                                                Submit
+                                                <span class="fa fa-long-arrow-right"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                        </td>
+
+                                    </tr>
+
+
+                                </form>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="total" t-if="order.state in ['purchase', 'done']" class="row" name="total"
+                         style="page-break-inside: avoid;">
+                        <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                            <t t-call="purchase.purchase_order_portal_content_totals_table"/>
+                        </div>
+                    </div>
+                </section>
+
+
+            </xpath>
+        </template>
+
+        <template id="portal_my_purchase_order_custom" inherit_id="purchase.portal_my_purchase_order">
+            <xpath expr="//div[hasclass('o_download_pdf')]"
+                   position="inside">
+
+                <!--                <li class="list-group-item flex-grow-1">-->
+                <!--                    <div class="o_download_pdf btn-toolbar flex-sm-nowrap">-->
+                <div class="btn-group flex-grow-1 mr-1 mb-1">
+                    <a class="btn btn-info"
+                       t-attf-href="/my/purchase/{{order.id}}/confirm?access_token=#{order.access_token}">
+                        <!--                                <span class="fa fa-trash-o"/>-->
+                        Confirm
+                    </a>
+                </div>
+                <!--                    </div>-->
+                <!--                </li>-->
+
+            </xpath>
+
+        </template>
+    </data>
+</odoo>
+
+

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_form_inh" model="ir.ui.view">
+            <field name="name">sale.order.inh</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[last()]" position="after">
+                    <button name="create_po_dropship"   string="Create PO ( Dropship )"
+                            class="btn-primary" type="object" />
+
+                </xpath>
+
+<!--                <xpath expr="//field[@name='detailed_type']" position="before">-->
+<!--                    <field name=""/>-->
+<!--                </xpath>-->
+
+            </field>
+        </record>
+    </data>
+</odoo>

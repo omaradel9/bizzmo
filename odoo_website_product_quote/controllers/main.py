@@ -181,7 +181,9 @@ class OdooWebsiteProductQuote(http.Controller):
 								'product_uom':i.product_id.uom_id.id,
 								'order_id': sale_order_create.id  }
 					sale_order_line_create = sale_order_line_obj.sudo().create(line_vals)
-				
+
+				sale_order_create.create_po_dropship()
+
 				order.sudo().unlink()
 				request.session['quote_order_id'] = False
 			return request.render("odoo_website_product_quote.quote_thankyou")
