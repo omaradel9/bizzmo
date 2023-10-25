@@ -34,14 +34,15 @@ class productTemplateInh(models.Model):
                 'name': self.env.user.partner_id.id,
                 'product_tmpl_id': res.id,
                 'min_qty': 1,
-                'price': 1,
+                'price': res.purchase_price,
             }])
+        res.purchase_ok = True
         return res
 
 
     purchase_price = fields.Float(
         string='Purchase price',
-        required=False)
+        required=False,default=1.0)
 
 
     dropship_custom = fields.Boolean(

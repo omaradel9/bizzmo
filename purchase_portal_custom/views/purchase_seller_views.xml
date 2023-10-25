@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <record id="wk_seller_product_purchase_order_line_tree_view" model="ir.ui.view">
+            <field name="name">seller.product.purchase.order.line</field>
+            <field name="model">purchase.order.line</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase Order Lines" create="0" edit="0" default_order="id desc">
+                    <field name="order_id"/>
+                    <field name="create_date"/>
+                    <field name="order_partner_id"/>
+                    <field name="product_id" invisible="0"/>
+                    <field name="product_uom_qty" string="Qty"/>
+                    <field name="product_uom" string="Unit of Measure" groups="uom.group_uom"/>
+                    <field name="price_subtotal" sum="Total"/>
+                    <field name="vendor_state" string="Vendor state"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="purchase_order_line_seller_action" model="ir.actions.act_window">
+            <field name="name">Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">
+                [('order_partner_id','=',partner_id)]
+            </field>
+
+            <field
+                    name="view_ids"
+                    eval="[(5, 0, 0),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('purchase_portal_custom.wk_seller_product_purchase_order_line_tree_view')}),
+                ]"/>
+        </record>
+
+
+        <record id="wk_seller_purchase_order_line_pending_action" model="ir.actions.act_window">
+            <field name="name">Purchase Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('vendor_state','=','pending'), ('order_partner_id','=',partner_id)]</field>
+            <field
+                    name="view_ids"
+                    eval="[(5, 0, 0),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('purchase_portal_custom.wk_seller_product_purchase_order_line_tree_view')}),
+                ]"/>
+        </record>
+        <record id="wk_seller_purchase_order_line_approved_action" model="ir.actions.act_window">
+            <field name="name">Purchase Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order.line</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('vendor_state','=','approved'), ('order_partner_id','=',partner_id)]</field>
+            <field
+                    name="view_ids"
+                    eval="[(5, 0, 0),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('purchase_portal_custom.wk_seller_product_purchase_order_line_tree_view')}),
+                ]"/>
+        </record>
+        <menuitem id="purchase_seller_root" name="Purchase" sequence="3" parent="odoo_marketplace.wk_seller_dashboard"/>
+
+        <menuitem id="purchase_seller_order" name="Orders" parent="purchase_seller_root"
+                  action="purchase_order_line_seller_action" sequence="1"/>
+    </data>
+</odoo>

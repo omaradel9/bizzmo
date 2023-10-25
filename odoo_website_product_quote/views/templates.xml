@@ -272,7 +272,7 @@
 							<br/>
 							<t t-if="website.user_id != user_id">
 								<div class="row" style="display:block;">
-									<a role="button" class="btn btn-primary ml-2" href="/quote">
+									<a role="button" class="btn btn-primary ml-2" href="/shop">
 										<span class="fa fa-chevron-left" />
 										<span class="">Continue</span>
 									</a>
@@ -286,7 +286,7 @@
 							</t>
 							<t t-if="website.user_id == user_id">
 								<div class="row" style="display:block;">
-									<a role="button" class="btn btn-primary ml-2" href="/quote" >
+									<a role="button" class="btn btn-primary ml-2" href="/shop" >
 										<span class="fa fa-chevron-left" />
 										<span class="">Continue</span>
 									</a>

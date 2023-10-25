@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="purchase_order_form_inh" model="ir.ui.view">
+            <field name="name">purchase.order.inh</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <field name="sale_line_id"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

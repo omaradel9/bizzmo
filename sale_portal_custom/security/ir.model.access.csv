@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_procurement_group_portal,procurement_group.procurement_group,stock.model_procurement_group,base.group_portal,1,1,1,1

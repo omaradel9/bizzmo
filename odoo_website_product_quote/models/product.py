@@ -9,9 +9,9 @@ from odoo.http import request
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    quote_products = fields.Boolean('Quote Products')
+    quote_products = fields.Boolean('Quote Products',default=True)
     _defaults = {
-        'quote_products': False
+        'quote_products': True
     }
 
 

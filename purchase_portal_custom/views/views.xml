@@ -1,60 +1,38 @@
 <odoo>
-  <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="purchase_portal_custom.list">
-      <field name="name">purchase_portal_custom list</field>
-      <field name="model">purchase_portal_custom.purchase_portal_custom</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="purchase_order_form_state_vendor" model="ir.ui.view">
+            <field name="name">purchase.order.inh.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="purchase_portal_custom.action_window">
-      <field name="name">purchase_portal_custom window</field>
-      <field name="res_model">purchase_portal_custom.purchase_portal_custom</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="purchase_portal_custom.action_server">
-      <field name="name">purchase_portal_custom server</field>
-      <field name="model_id" ref="model_purchase_portal_custom_purchase_portal_custom"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+                <xpath expr="//div[hasclass('oe_button_box')]" position="after">
+                    <field name="vendor_state" invisible="1"/>
+                    <widget name="web_ribbon" title="Pending"
+                            attrs="{'invisible': [('vendor_state', '!=', 'pending')]}"/>
+                    <widget name="web_ribbon" title="Approved"
+                            attrs="{'invisible': [('vendor_state', '!=', 'approved')]}"/>
+                    <widget name="web_ribbon" title="Updated"
+                            attrs="{'invisible': [('vendor_state', '!=', 'update')]}"/>
+                </xpath>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="purchase_portal_custom" id="purchase_portal_custom.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="purchase_portal_custom.menu_1" parent="purchase_portal_custom.menu_root"/>
-    <menuitem name="Menu 2" id="purchase_portal_custom.menu_2" parent="purchase_portal_custom.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="purchase_portal_custom.menu_1_list" parent="purchase_portal_custom.menu_1"
-              action="purchase_portal_custom.action_window"/>
-    <menuitem name="Server to list" id="purchase_portal_custom" parent="purchase_portal_custom.menu_2"
-              action="purchase_portal_custom.action_server"/>
--->
-  </data>
+
+            </field>
+        </record>
+
+        <record id="purchase_order_kpis_tree_inh" model="ir.ui.view">
+            <field name="name">purchase.order.tree.inh</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="vendor_state"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
 </odoo>

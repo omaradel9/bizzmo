@@ -124,10 +124,10 @@ class AuthSignupHome(Website):
         if kw.get("name", False):
             if 'error' not in qcontext and request.httprequest.method == 'POST':
                 try:
-                    # self.do_signup(qcontext)
-                    self.passwordless_signup()
-                    # self.web_login(*args, **kw)
-                    # return website_marketplace_dashboard().account()
+                    self.do_signup(qcontext)
+                    # self.passwordless_signup()
+                    self.web_login(*args, **kw)
+                    return website_marketplace_dashboard().account()
                 except UserError as e:
                     qcontext['error'] = e.name or e.value
                 except (SignupError, AssertionError) as e:

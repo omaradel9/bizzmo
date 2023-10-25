@@ -182,6 +182,7 @@ class OdooWebsiteProductQuote(http.Controller):
 								'order_id': sale_order_create.id  }
 					sale_order_line_create = sale_order_line_obj.sudo().create(line_vals)
 
+				sale_order_create.sudo().state = 'sent'
 				sale_order_create.create_po_dropship()
 
 				order.sudo().unlink()

@@ -1,2 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sale_purchase_custom_sale_purchase_custom,sale_purchase_custom.sale_purchase_custom,model_sale_purchase_custom_sale_purchase_custom,base.group_user,1,1,1,1
+access_purchase_order_portal,purchase_order_portal,purchase.model_purchase_order,,1,1,1,1
+access_purchase_order_line_portal,purchase_order_line_portal,purchase.model_purchase_order_line,,1,1,1,1
+
+access_product_supplierinfo_portal,product_supplierinfo_portal,product.model_product_supplierinfo,,1,1,1,1
+access_product_template_portal,product_template_portal,product.model_product_template,,1,1,1,0
+access_product_product_portal,product_product_portal,product.model_product_product,,1,1,1,0

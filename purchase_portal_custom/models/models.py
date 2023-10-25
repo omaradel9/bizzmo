@@ -1,18 +1,45 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
+
+class PurchaseOrderInh(models.Model):
+    _inherit = 'purchase.order'
+
+    vendor_state = fields.Selection(
+        string='Vendor state',
+        selection=[
+            ('pending', 'Pending'),
+            ('update', 'Updated'),
+            ('approved', 'Approved'),
+                   ],
+        required=False,default="pending" )
 
 
-# class purchase_portal_custom(models.Model):
-#     _name = 'purchase_portal_custom.purchase_portal_custom'
-#     _description = 'purchase_portal_custom.purchase_portal_custom'
+    def confirm_vendor(self):
+        self.vendor_state = 'approved'
+        for line in self.order_line:
+            line.vendor_state = 'approved'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+
+        orders = self.env['purchase.order'].search(
+            [('sale_order_dropship', '=', self.sale_order_dropship.id),('vendor_state','=','pending')])
+        if not orders:
+            self.sale_order_dropship.action_confirm()
+            orders = self.env['purchase.order'].search(
+                [('sale_order_dropship', '=', self.sale_order_dropship.id)])
+            for o in orders:
+                o.button_confirm()
+
+
+class PurchaseOrderLineInh(models.Model):
+    _inherit = 'purchase.order.line'
+
+    vendor_state = fields.Selection(
+        string='Vendor state',
+        selection=[('pending', 'Pending'),
+                   ('approved', 'Approved'), ],
+        required=False, default="pending")
+
+
+
+    order_partner_id = fields.Many2one(related='order_id.partner_id', store=True, string='Vendor', index=True)

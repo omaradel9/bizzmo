@@ -3,6 +3,16 @@
         <template id="purchase_order_portal_content_custom" inherit_id="purchase.purchase_order_portal_content">
 
             <xpath expr="//section[@id='details']" position="replace">
+                <div id="informations">
+                    <div class="row" id="po_date">
+                        <div class="mb-3 col-6">
+                            <t>
+                                <strong>Vendor State :</strong>
+                            </t>
+                            <span t-field="order.vendor_state"/>
+                        </div>
+                    </div>
+                </div>
                 <section id="details" style="page-break-inside: auto;" class="mt32">
                     <h3 id="details">Pricing</h3>
 
@@ -46,7 +56,10 @@
                                                        t-set="product_qty"
                                                        class="form-control product_qty"
                                                        t-att-value="line.product_qty"
+                                                       max="5"
                                                 />
+                                                <input type="hidden" name="product_qty_max" id="product_qty_max"
+                                                       t-att-value="line.product_qty"/>
                                             </td>
                                             <td scope="col">
                                                 <input type="text" id="product_uom" name="product_uom"
@@ -57,7 +70,7 @@
                                                 />
                                             </td>
                                             <td scope="col">
-                                                <input type="text" id="price_unit" name="price_unit"
+                                                <input type="number" id="price_unit" name="price_unit"
                                                        t-set="price_unit"
                                                        class="form-control price_unit"
                                                        t-att-value="line.price_unit"
@@ -84,18 +97,32 @@
                                         <td></td>
                                         <td>
                                             <div id="total" class="row" name="total" style="page-break-inside: avoid;">
-                                        <div class="col-sm-7 col-md-5 ml-auto">
-                                            <button
-                                                    type="submit" id="to_confirm_checkbox"
-                                                    class="btn btn-default btn-primary pull-right mb32 ">
-                                                Submit
-                                                <span class="fa fa-long-arrow-right"/>
-                                            </button>
-                                        </div>
-                                    </div>
+                                                <div class="col-sm-7 col-md-5 ml-auto">
+                                                    <button
+                                                            type="submit" id="to_confirm_checkbox"
+                                                            class="btn btn-default btn-primary pull-right mb32 ">
+                                                        Submit
+                                                        <span class="fa fa-long-arrow-right"/>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </td>
 
                                     </tr>
+                                    <script>
+
+                                        document.getElementById("product_qty").max = parseInt(document.getElementById("product_qty_max").value);
+
+<!--                                        document.getElementsByClassName('product_qty')[0].oninput = function () {-->
+<!--                                        var max = parseInt(this.max);-->
+<!--                                        console.log("hhhhhhhhhhhhhhh")-->
+
+<!--                                        this.max = parseInt(document.getElementById("product_qty_max").value);-->
+
+<!--                                        }-->
+
+
+                                    </script>
 
 
                                 </form>
@@ -110,7 +137,14 @@
                         </div>
                     </div>
                 </section>
-
+                <!--                <div class="col-lg-12">-->
+                <!--                    <div t-if="error_message" class="alert alert-danger" role="alert">-->
+                <!--                        <t t-foreach="error_message" t-as="err">-->
+                <!--                            <t t-esc="err"/>-->
+                <!--                            <br/>-->
+                <!--                        </t>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
             </xpath>
         </template>
@@ -121,7 +155,7 @@
 
                 <!--                <li class="list-group-item flex-grow-1">-->
                 <!--                    <div class="o_download_pdf btn-toolbar flex-sm-nowrap">-->
-                <div class="btn-group flex-grow-1 mr-1 mb-1">
+                <div class="btn-group flex-grow-1 mr-1 mb-1" t-if="order.vendor_state == 'pending'">
                     <a class="btn btn-info"
                        t-attf-href="/my/purchase/{{order.id}}/confirm?access_token=#{order.access_token}">
                         <!--                                <span class="fa fa-trash-o"/>-->
