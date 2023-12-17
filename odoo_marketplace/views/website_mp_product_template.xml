@@ -18,11 +18,11 @@
 							<div class="row" id="selle_pic_name_add">
 								<div class="col-md-2">
 									<div class="seller-image-container">
-										<a t-if="marketplace_seller_id.website_published" itemprop="url" target="_blank" t-attf-href="/seller/profile/#{marketplace_seller_id.sudo().url_handler if marketplace_seller_id.sudo().url_handler else marketplace_seller_id.sudo().id}">
+										<a t-if="product.marketplace_seller_id.profile_image" itemprop="url" target="_blank" t-attf-href="/seller/profile/#{marketplace_seller_id.sudo().url_handler if marketplace_seller_id.sudo().url_handler else marketplace_seller_id.sudo().id}">
 											<img t-att-src="image_data_uri(product.marketplace_seller_id.profile_image)" t-att-alt="marketplace_seller_id.name" title="Seller" />
 										</a>
-										<a t-if="not marketplace_seller_id.website_published">
-											<img t-att-src="image_data_uri(product.marketplace_seller_id.profile_image)" t-att-alt="marketplace_seller_id.name" title="Seller" />
+										<a t-if="not product.marketplace_seller_id.profile_image">
+											<img src="/bizzmowebsite/static/src/images/Male%20User.png"/>
 										</a>
 									</div>
 								</div>

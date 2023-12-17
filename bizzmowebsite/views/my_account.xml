@@ -22,7 +22,7 @@
                                     <img  t-att-src="image_data_uri(user_id.partner_id.image_1920)"/>
                                 </t> 
                                 <t t-else="">
-                                    <img src="../static/src/images/Male%20User.png"/>
+                                    <img src="/bizzmowebsite/static/src/images/Male%20User.png"/>
                                 </t>
                             </div>
                             <div class="o_portal_my_details ">
