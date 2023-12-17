@@ -1,101 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- 
-	<template id="quote_cart_menu_template_header_minimalist" inherit_id="website.template_header_minimalist">
-		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
-			<t t-call="odoo_website_product_quote.header_quote_cart"></t>
-		</xpath>
-	</template>
- -->
+
+
 
  	<template id="header1" inherit_id="website.template_header_default" name="Shop Quote Cart Link">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
+
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
+
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_boxed" inherit_id="website.template_header_boxed">
 		<xpath expr="//t[@t-call='portal.placeholder_user_sign_in']" position="before">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
+
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
+
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_centered_logo" inherit_id="website.template_header_centered_logo">
 		<xpath expr="//t[@t-call='portal.placeholder_user_sign_in']" position="before">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
+
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
+
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_image" inherit_id="website.template_header_image">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
+
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
+
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_hamburger_full" inherit_id="website.template_header_hamburger_full">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
+
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
+
 		</xpath>
 	</template>
 
 <template id="quote_cart_menu_template_header_magazine" inherit_id="website.template_header_magazine">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-			<t t-if ="cart_qty">
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
 						<i class="fa fa-shopping-cart"></i>
-						Quote Cart <sup t-attf-class="my_cart_quantity badge badge-primary" t-esc="cart_qty" />
+						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
+
 					</a>
 				</li>
-			</t>
 		</xpath>
 	</template>
 
@@ -209,7 +208,7 @@
 									<form t-attf-action="/quote/product/selected/#{product.id}" method="post">
 										<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 										<input name="product_id" t-att-value="product.product_variant_ids[0].id" type="hidden"/>
-										<a id="request_quote" class="btn btn-primary btn-md mt8 a-submit" href="#">Request Quote</a>
+										<a id="request_quote" class="btn nkk btn-primary btn-md mt8 a-submit" href="#">Request Quote</a>
 									</form>
 								</div>
 							</t>
@@ -237,18 +236,18 @@
 		</xpath>
 	</template>
 
-	<template id="products_item1" name="Products item"  inherit_id="website_sale.products_item" active="True" customize_show="True" >
-		<xpath expr="//div[@class='product_price mb-1']" position="replace">
-			<t t-if="not product.quote_products">
-				<div class="product_price mb-1" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
-	                <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-	                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-	                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
-	                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
-	            </div>
-			</t>
-		</xpath>
-	</template>
+<!--	<template id="products_item1" name="Products item"  inherit_id="website_sale.products_item" active="True" customize_show="True" >-->
+<!--		<xpath expr="//div[@class='product_price mb-1']" position="replace">-->
+<!--			<t t-if="not product.quote_products">-->
+<!--				<div class="product_price mb-1" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">-->
+<!--	                <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />-->
+<!--	                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>-->
+<!--	                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />-->
+<!--	                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />-->
+<!--	            </div>-->
+<!--			</t>-->
+<!--		</xpath>-->
+<!--	</template>-->
 
 
 

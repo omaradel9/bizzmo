@@ -113,7 +113,7 @@
       'odoo_marketplace/static/src/js/jquery.circlechart.js',
       'odoo_marketplace/static/src/js/seller_ratting.js',
       'odoo_marketplace/static/src/js/marketplace_snippets.js',
-      'odoo_marketplace/static/src/js/marketplace.js'
+      'odoo_marketplace/static/src/js/marketplace.js',
 
     ]
   },

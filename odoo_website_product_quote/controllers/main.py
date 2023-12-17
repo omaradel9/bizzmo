@@ -4,6 +4,9 @@
 import datetime
 from odoo import http
 from odoo.http import request
+import logging
+_logger = logging.getLogger(__name__)
+
 import json
 class OdooWebsiteProductQuote(http.Controller):
 
@@ -18,11 +21,12 @@ class OdooWebsiteProductQuote(http.Controller):
 		cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
 		
 		return request.render("odoo_website_product_quote.quote_cart")
-	
-	@http.route(['/quote/product/selected/<model("product.template"):product_id>'], type='http', auth="public", website=True)
+
+	@http.route(['/quote/product/selected/<model("product.template"):product_id>'], type='http', csrf=False, auth="public", website=True)
 	def quote_multiple(self, product_id, **post):
 		cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-		
+		request.session['omar'] = 'omar adel omar'
+
 		quote_obj = request.env['quote.order']
 		quote_line_obj = request.env['quote.order.line']
 		partner = request.env.user.partner_id
@@ -64,7 +68,7 @@ class OdooWebsiteProductQuote(http.Controller):
 					'quote_id': quote_order.id,	
 				})
 			
-		return request.render("odoo_website_product_quote.quote_cart")	
+		# return request.render("odoo_website_product_quote.quote_cart")
 
 	@http.route(['/quote/product/selected/nonlogin'], type='http', auth="public", website=True)
 	def quote_multiple_nonlogin(self, **post):

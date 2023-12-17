@@ -126,8 +126,8 @@ class AuthSignupHome(Website):
                 try:
                     self.do_signup(qcontext)
                     # self.passwordless_signup()
-                    self.web_login(*args, **kw)
-                    return website_marketplace_dashboard().account()
+                    # self.web_login(*args, **kw)
+                    # return website_marketplace_dashboard().account()
                 except UserError as e:
                     qcontext['error'] = e.name or e.value
                 except (SignupError, AssertionError) as e:

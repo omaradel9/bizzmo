@@ -13,3 +13,25 @@
         display: none;
     }
 }
+
+
+#seller_info{
+    padding: 10px;
+    background-color: #F8F9FA;
+  
+}
+
+.seller-image-container {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+
+}
+
+
+.seller-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%; 
+}

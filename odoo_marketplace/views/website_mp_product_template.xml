@@ -12,27 +12,24 @@
 				<t t-if="marketplace_seller_id">
 					<hr class=""/>
 					<section class="container">
-						<div class="col-md-12" style="padding:0px;" id="seller_info">
-							<div class="sold-by-label mb4" style="text-transform: uppercase">Sold By</div>
+						<div class="col-md-12"  id="seller_info">
+							
 							<t t-set="mp_seller_shop_id" t-value="marketplace_seller_id.sudo().seller_shop_id"/>
 							<div class="row" id="selle_pic_name_add">
-								<div class="col-md-3">
-									<div style="">
-                                        <a t-if="marketplace_seller_id.website_published" itemprop="url" target="_blank" t-attf-href="/seller/profile/#{marketplace_seller_id.sudo().url_handler if marketplace_seller_id.sudo().url_handler else marketplace_seller_id.sudo().id}">
-                                            <span>
-                                                <div t-attf-style="background-image: url('/web/image/res.partner/#{marketplace_seller_id.id}/profile_image');height: 80px;width: 80px;border-radius: 4px;background-size: contain;" t-att-alt="marketplace_seller_id.name" title="Seller"/>
-                                            </span>
+								<div class="col-md-2">
+									<div class="seller-image-container">
+										<a t-if="marketplace_seller_id.website_published" itemprop="url" target="_blank" t-attf-href="/seller/profile/#{marketplace_seller_id.sudo().url_handler if marketplace_seller_id.sudo().url_handler else marketplace_seller_id.sudo().id}">
+											<img t-att-src="image_data_uri(product.marketplace_seller_id.profile_image)" t-att-alt="marketplace_seller_id.name" title="Seller" />
 										</a>
-                                        <a t-if="not marketplace_seller_id.website_published">
-											<span>
-                                                <div t-attf-style="background-image: url('/web/image/res.partner/#{marketplace_seller_id.id}/profile_image');height: 80px;width: 80px;border-radius: 4px;background-size: contain;" t-att-alt="marketplace_seller_id.name" title="Seller"/>
-                                            </span>
+										<a t-if="not marketplace_seller_id.website_published">
+											<img t-att-src="image_data_uri(product.marketplace_seller_id.profile_image)" t-att-alt="marketplace_seller_id.name" title="Seller" />
 										</a>
 									</div>
 								</div>
-								<div class="col-md-9" >
-									<div style="color: rgb(41, 121, 183);background-color: rgb(245, 245, 245);border-radius: 3px;padding: 0px 10px 0px 10px;height: 80px;">
+								<div class="col-md-10" >
+									<div >
 										<div class="mt4">
+											<div class="sold-by-label mb4" style="text-transform: uppercase; font-size:10px; color:#8D8D8D;">Sold By</div>
 											<i title="user" class="fa fa-user"/>
 											<span class="">
 												<!-- <a itemprop="name" target="_blank" t-attf-href="/seller/profile/#{marketplace_seller_id.sudo().url_handler if marketplace_seller_id.sudo().url_handler else marketplace_seller_id.sudo().id}" t-field="marketplace_seller_id.sudo().name"/> -->

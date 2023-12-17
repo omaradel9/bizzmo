@@ -1,0 +1,197 @@
+:root{
+    --white: #FFF;
+    --light-gray: #CDCACA;
+    --gray: rgba(16, 15, 15, 0.583);;
+    --dark-blue: #0D456C;
+    --light-blue: #32A0EC;
+}
+
+
+@if ($o-portal-use-default-colors) {
+    #wrapwrap.o_portal {
+        @include o-bg-color( white, $with-extras: false);
+    }
+}
+
+
+
+.oe_search_box {
+    padding-right: 23px;
+    text-overflow: ellipsis;
+    border: none;
+    border-bottom: 1px solid var(--light-gray);
+    
+    
+}
+
+.oe_search_box:focus{
+    border-color: black ;
+    border-bottom-width: 2px;
+
+    box-shadow: none;
+}
+.input-group-append{
+    border-radius: 50%;
+}
+
+.input-group-append > .btn{
+    background-color: #FFF;
+    border-color: #FFF;
+    .fa-search{
+        color: black;
+    }
+}
+
+
+
+
+
+.o_my_sidebar{
+
+    max-width: max-content;
+    max-height: max-content;
+    margin: 30px 0px 30px 50px;
+    padding: 17px;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0 4px 20px var(--light-gray);
+    .edit_btn{
+        float: right;
+        
+        a{
+            padding: 10px;
+            color: var(--gray);
+            font-family: Roboto;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 200px;
+            line-height: normal;
+            transition: transform 0.2s ease; 
+            
+        }
+    }
+    .profile_pic{
+        clear: both;
+        display: flex;
+        width: 115px;
+        height: 115px;
+        margin: auto;
+        margin-bottom: 10px;
+        background-color: var(--white);
+        border: #D3D3D3 solid 2px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+        }
+       
+    }
+
+    .o_portal_my_details {
+        white-space: nowrap; 
+       
+    }
+
+    .o_portal_my_security > a{
+        display: block;
+        text-align: center;
+        color:var(--gray);
+        text-decoration: none;
+        transition: transform 0.2s ease;
+    }
+    a:hover {
+        color: var(--dark-blue);
+        text-decoration: none;
+        transform: translateX(5px);
+    }
+
+
+
+
+
+  
+}
+
+
+
+.o_portal_docs{
+    margin-top: 15px;
+    
+
+    .row {
+        margin-top: 20px;
+
+    }
+    .row > div > a{
+        border: 1.5px solid var(--light-blue);
+        border-radius: 25px;
+    }
+
+
+}
+.badge-secondary{
+    color: var(--white);
+    background-color: var(--dark-blue);
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+

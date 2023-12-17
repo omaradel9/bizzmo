@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="header_cart_link_inherit" inherit_id="website_sale.header_cart_link">
+        <xpath expr="//a[@href='/shop/cart']" position="replace">
+        </xpath>
+    </template>
+    <template id="products_itemss" inherit_id="website_sale.products_item">
+
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="replace">
+        </xpath>
+        <xpath expr="//a[hasclass('o_product_link')]" position="replace">
+        </xpath>
+        <xpath expr="//form[hasclass('oe_product_cart')]" position="after">
+            <div class="o_wsale_product_btn add-quote pl-2">
+                <form t-attf-action="/quote/product/selected/#{product.id}" method="post">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <button type="submit" name="add-quote" class="btn btn-primary rounded-pill add-btn" href="#" aria-label="Shopping cart" title="Shopping cart">
+                        <span class="fa fa-shopping-cart add-quotes"/>
+                    </button>
+			    </form>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="attributes">
+            <attribute name="class" add="text-center" separator=" "/>
+        </xpath>
+        <xpath expr="//form[hasclass('oe_product_cart')]" position="attributes">
+            <attribute name="class" add="border-0" separator=" "/>
+        </xpath>
+
+
+
+
+    </template>
+
+    <template id="website_search_box_inherit" inherit_id="website.website_search_box">
+        <xpath expr="//div[@role='search']" position="replace">
+
+        <div t-attf-class="input-group search-custom2 #{_classes}" role="search">
+            <t t-set="search_placeholder">Search...</t>
+            <input type="search" name="search" t-att-class="'search-custom search-query form-control oe_search_box %s' % _input_classes" t-att-placeholder="placeholder if placeholder else search_placeholder" t-att-value="search"/>
+            <div class="input-group-append search-custom3">
+                <button type="submit" style="border-radius: 0px 20px 20px 0px" t-att-class="'btn oe_search_button %s' % (_submit_classes or 'btn-primary')" aria-label="Search" title="Search"><i class="fa fa-search"/></button>
+            </div>
+        </div>
+        </xpath>
+    </template>
+<!--    <template id="products_inherit" inherit_id="website_sale.products">-->
+<!--        <xpath expr="//div[hasclass('o_wsale_products_grid_table_wrapper')]" position="attributes">-->
+
+<!--        <attribute name="style" add="margin-left:300px;" separator=" "/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+
+
+</odoo>

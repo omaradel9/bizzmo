@@ -1,0 +1,51 @@
+<odoo>
+    <template id="custom_portal_layout" inherit_id="portal.portal_layout" name="my account">
+        <xpath expr='//div[@id="wrap"]' position="replace">
+            <div class="container mb64">
+                <t t-if="my_details">
+                    <div class="row justify-content-center mt-4">
+                        <div t-attf-class="col-12 col-md col-lg-6">
+                            <t t-out="0"/>
+                        </div>
+                        <div id="o_my_sidebar" class="pt-3 pt-lg-0 col-12 col-md col-lg-4 col-xl-3 o_my_sidebar">
+                            <div class="o_my_contact" t-if="sales_user">
+                                <t t-call="portal.portal_contact"/>
+                            </div>
+                            <div class="edit_btn ">
+                                <a role="button" href="/my/account" class="btn btn-sm btn-link"><i class="fa fa-pencil"/> Edit</a>
+                                
+                            </div>
+                            <div class="profile_pic">
+                                
+                                
+                                <t t-if="user_id.partner_id.image_1920">
+                                    <img  t-att-src="image_data_uri(user_id.partner_id.image_1920)"/>
+                                </t> 
+                                <t t-else="">
+                                    <img src="../static/src/images/Male%20User.png"/>
+                                </t>
+                            </div>
+                            <div class="o_portal_my_details ">
+                                <div class="text-center pb-3">
+                                    <div t-field="user_id.partner_id" t-options='{"widget": "contact", "fields": ["name"]}'/>
+                                </div>
+                              
+                                <div t-field="user_id.partner_id" t-options='{"widget": "contact", "fields": ["email", "phone", "address"]}'/>
+                            </div>
+                            <div class="o_portal_my_security mt-3">
+                                <hr class="mt-1 mb-1"/>
+                                <a href="/">Manage Payment Methods</a>
+                                <a href="/my/security"><i class="fa fa-pencil mx-1"/>Edit Security Settings</a>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-else="">
+                    <t t-out="0"/>
+                </t>
+            </div>
+          
+           
+        </xpath>
+    </template>
+</odoo>

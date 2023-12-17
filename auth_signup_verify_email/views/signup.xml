@@ -1,96 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
+<!-- Copyright 2016 Jairo Llopis <jairo.llopis@tecnativa.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <template id="signup_fields" inherit_id="auth_signup.fields">
-        <xpath expr="//div[hasclass('field-password')]" position="attributes">
-            <attribute name="t-if">only_passwords</attribute>
-        </xpath>
-        <xpath expr="//div[hasclass('field-confirm_password')]" position="attributes">
-            <attribute name="t-if">only_passwords</attribute>
-        </xpath>
-        <xpath expr="//input[@name='login']" position="attributes">
-            <attribute name="type">email</attribute>
-        </xpath>
+    <template id="signup_verification">
+                <link rel="stylesheet" href="/auth_signup_verify_email/static/src/css/style.css"/>
 
-        <xpath expr="//div[@class='form-group field-name']" position="after">
-
-            <div class="form-group field-mobile" t-if="only_passwords">
-                <label for="mobile">Mobile</label>
-                <input type="text" name="mobile" t-att-value="mobile" id="mobile"
-                       class="form-control"
-                       placeholder="Mobile"
-                       required="required"/>
-            </div>
-            <div class="form-group field-phone" t-if="only_passwords">
-                <label for="phone">Phone</label>
-                <input type="text" name="phone" t-att-value="phone" id="phone"
-                       class="form-control"
-                       placeholder="Phone"
-                       required="required"/>
-            </div>
-
-            <div class="form-group field-street" t-if="only_passwords">
-                <label for="street">Street</label>
-                <input type="text" name="street" t-att-value="street" id="street"
-                       class="form-control"
-                       placeholder="Street"
-                       required="required"/>
-            </div>
-
-            <div class="form-group field-street2" t-if="only_passwords">
-                <label for="street2">Street 2</label>
-                <input type="text" name="street2" t-att-value="street2" id="street2"
-                       class="form-control"
-                       placeholder="street 2"
-                       required="required"/>
-            </div>
-
-            <div class="form-group field-country_id" t-if="only_passwords">
-                <label for="country_id">Country</label>
-                <select name="country_id" class="form-control">
-                    <option value="">Country...</option>
-                    <t t-foreach="countries or []" t-as="country">
-                        <option t-att-value="country.id">
-                            <t t-esc="country.name"/>
-                        </option>
-                    </t>
-                </select>
-            </div>
-            <div class="form-group field-state_id" t-if="only_passwords">
-                <label for="state_id">State / Province</label>
-                <select name="state_id" class="form-control ">
-                    <option value="">select...</option>
-                    <t t-foreach="states or []" t-as="state">
-                        <option t-att-value="state.id"
-                                t-att-data-country_id="state.country_id.id">
-                            <t t-esc="state.name"/>
-                        </option>
-                    </t>
-                </select>
-            </div>
-
-            <div class="form-group field-website" t-if="only_passwords">
-                <label for="website">Website</label>
-                <input type="text" name="website" t-att-value="website" id="website"
-                       class="form-control"
-                       placeholder="Website"
-                       required="required"/>
-            </div>
-
-            <div class="form-group field-industry_id" t-if="only_passwords">
-                <label for="industry_id">industry</label>
-                <select name="industry_id" class="form-control ">
-                    <option value="">select...</option>
-                    <t t-foreach="industries or []" t-as="industry">
-                        <option t-att-value="industry.id"
-                        >
-                            <t t-esc="industry.name"/>
-                        </option>
-                    </t>
-                </select>
-            </div>
-
-        </xpath>
-
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'/>
+        <script src="/auth_signup_verify_email/static/src/js/otp.js" />
+        <t t-call="web.login_layout">
+                    <div class="alert alert-danger" id="wrong" style="display: none;">the OTP not matched</div>
+                    <div class="alert alert-success" id="ok" style="display: none;"> OTP sent successfully</div>
+                    <h6>Please enter the OTP to verify your account</h6>
+                    <div> <span>A code has been sent to</span>
+                        <small>
+                            <span id="email" t-att-service="email" t-esc="email"/> <a id="resend" href="#">Resend OTP?</a>
+                        </small>
+                    </div>
+                    <form>
+                        <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="first" maxlength="1" />
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="second" maxlength="1" />
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="third" maxlength="1" />
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="fourth" maxlength="1" />
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="fifth" maxlength="1" />
+                                <input class="m-1 text-center form-control rounded inpots" type="text" id="sixth" maxlength="1" />
+                        </div>
+                    </form>
+                    <div class="mt-4 text-center"> <button class="btn btn-primary  px-4 validate" id="validate">Validate</button> </div>
+        </t>
     </template>
 </odoo>

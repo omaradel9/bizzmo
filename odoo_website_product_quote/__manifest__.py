@@ -25,8 +25,7 @@
     'website': 'https://www.browseinfo.com',
     "price": 19,
     "currency": 'EUR',
-    'images': [],
-    'depends': ['website','website_sale','sale_management'],
+    'depends': ['website', 'website_sale', 'sale_management'],
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
@@ -35,20 +34,21 @@
         'views/sale_view.xml',
         'views/website_view.xml',
         'views/templates.xml',
+
     ],
-   'qweb': [
+    'qweb': [
                 
     ],
     "auto_install": False,
     "installable": True,
     'license': 'OPL-1',
-    "live_test_url":'https://youtu.be/hcIhx9WfWro',
-    "images":["static/description/Banner.png"],
-    'assets':{
-        'web.assets_frontend':[
-        '/odoo_website_product_quote/static/src/js/web.js',
+    "live_test_url": 'https://youtu.be/hcIhx9WfWro',
+    "images": ["static/description/Banner.png"],
+    'assets': {
+        'web.assets_frontend': [
+            '/odoo_website_product_quote/static/src/js/web.js',
+
         ]
     },
 }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

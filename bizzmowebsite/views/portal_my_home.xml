@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_portal_my_home_menus" inherit_id="portal.portal_my_home" priority="35">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="replace">
+            <div class="o_portal_docs list-group ">
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="title">Quotations</t>
+                            <t t-set="url" t-value="'/my/quotes'"/>
+                            <t t-set="placeholder_count" t-value="'quotation_count'"/>
+                        </t>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="title">Sales Orders</t>
+                            <t t-set="url" t-value="'/my/orders'"/>
+                            <t t-set="placeholder_count" t-value="'order_count'"/>
+                        </t>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="title">Purchase Orders</t>
+                            <t t-set="url" t-value="'/my/purchase'"/>
+                            <t t-set="placeholder_count" t-value="'purchase_count'"/>
+                        </t>
+                    </div>
+                    <div class="col-md-6">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="title">Invoices &amp; Bills</t>
+                            <t t-set="url" t-value="'/my/invoices'"/>
+                            <t t-set="placeholder_count" t-value="'invoice_count'"/>
+                        </t>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="title">Requests for Quotation</t>
+                            <t t-set="url" t-value="'/my/rfq'"/>
+                            <t t-set="placeholder_count" t-value="'rfq_count'"/>
+                        </t>
+                        
+                    </div>
+                    
+                </div>
+               
+               
+                
+            </div>
+        </xpath>
+    </template>
+
+    
+        
+    
+
+   
+
+
+  
+
+   
+
+</odoo>
+
+
+
