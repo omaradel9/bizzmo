@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <template id="navbar_navss" inherit_id="website.navbar_nav" name="Shop Quote Cart Link">
+		<xpath expr="//ul[@id='top_menu']" position="inside">
+			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
+				<li class="nav-item divider d-none"/>
+				<li class="nav-item">
+					<a href="/quote/cart" class="nav-link">
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
+					</a>
+				</li>
+		</xpath>
+	</template>
     <template id="header_cart_link_inherit" inherit_id="website_sale.header_cart_link">
         <xpath expr="//a[@href='/shop/cart']" position="replace">
         </xpath>
