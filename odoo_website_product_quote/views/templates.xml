@@ -1,98 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-
-
-
- 	<template id="header1" inherit_id="website.template_header_default" name="Shop Quote Cart Link">
+	<template id="header1" inherit_id="website.template_header_default" name="Shop Quote Cart Link">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
-
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_boxed" inherit_id="website.template_header_boxed">
 		<xpath expr="//t[@t-call='portal.placeholder_user_sign_in']" position="before">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
-
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_centered_logo" inherit_id="website.template_header_centered_logo">
 		<xpath expr="//t[@t-call='portal.placeholder_user_sign_in']" position="before">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
-
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_image" inherit_id="website.template_header_image">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
-
 		</xpath>
 	</template>
 
 	<template id="quote_cart_menu_template_header_hamburger_full" inherit_id="website.template_header_hamburger_full">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
-
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
-
 		</xpath>
 	</template>
 
-<template id="quote_cart_menu_template_header_magazine" inherit_id="website.template_header_magazine">
+	<template id="quote_cart_menu_template_header_magazine" inherit_id="website.template_header_magazine">
 		<xpath expr="//t[@t-foreach='website.menu_id.child_id']" position="after">
 			<t t-set="cart_qty" t-value="website.sudo().get_qty()" />
 				<li class="nav-item divider d-none"/>
 				<li class="nav-item">
 					<a href="/quote/cart" class="nav-link">
-						<i class="fa fa-shopping-cart"></i>
-						Quote Cart 			<t t-if ="cart_qty"><div class='notification-dot'/></t>
-
+						<i class="fa fa-shopping-cart"/>Quote Cart
+						<t t-if ="cart_qty"><div class='notification-dot'/></t>
 					</a>
 				</li>
 		</xpath>
@@ -111,21 +91,17 @@
 											<div>
 														<div class="average_product_class" id="rate_tooltip">
 															<div style="float:left;margin-bottom: -40px;" id="shop_rate_star">
-
 																<p class="rate_average_shop">
 																	<span class="stars3">
-																		<span style="width: 50.25px;"></span>
+																		<span style="width: 50.25px;"/>
 																	</span>
 																</p>
-
 															</div>
-
 															<div class="review_font">
 																<span id="product_average" style="margin-left:100px;font-weight:bold;color:black"
 																	t-field="product.avg_product_rating" />
-
 																<input id="total_product_review" t-att-value="len(product.reviews_ids)"
-																	name="total_product_review" type="hidden"></input>
+																	name="total_product_review" type="hidden"/>
 																<t t-if="product.avg_product_rating &lt;=0">
 																	<span style="font-size:10px;color:black;">
 																		(Be the first one to rate)
@@ -133,7 +109,7 @@
 																</t>
 																<span>(</span>
 																<span id="total_product_review_span" name="total_product_review_span">
-																	<t t-esc="len(product.reviews_ids)"></t>
+																	<t t-esc="len(product.reviews_ids)"/>
 																</span>
 																<t t-if="len(product.reviews_ids) &lt;= 1">Review
 																</t>
@@ -196,7 +172,9 @@
 									<t t-foreach="attachments" t-as="attachment">
 										<form t-att-action="'/download/attachment?attachment_id=%i' % attachment.id" method="post">
 					          				<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-												<button type="submit" class="btn btn-default" style="margin: 0 0 10px;"> <i class="fa fa-download"></i>  <span t-esc="attachment.file_name"/> </button>
+												<button type="submit" class="btn btn-default" style="margin: 0 0 10px;"> <i class="fa fa-download"/>
+													<span t-esc="attachment.file_name"/>
+												</button>
 										</form>
 									</t>
 									
@@ -313,23 +291,23 @@
 		<table class="mb16 table table-striped table-sm" id="tbl" t-if="website_product">
 			<thead>
 				<tr>
-					<th></th>
+					<th/>
 					<th class="td-img">Product</th>
 					<th class="text-center td-qty">Quantity</th>
-					<th class="text-center td-action"></th>
+					<th class="text-center td-action"/>
 				</tr>
 			</thead>
 			<tbody id="tb_body">
 				<t t-foreach="website.get_quote_cart_products()" t-as="line">
 					<tr t-att-class="'optional_product info' if line.id else None ">
-						<td colspan="2" t-if="not line.product_id.product_tmpl_id" class='td-img'></td>
+						<td colspan="2" t-if="not line.product_id.product_tmpl_id" class='td-img'/>
 						<td align="center" t-if="line.product_id.product_tmpl_id" class='td-img'>
 							<span t-field="line.product_id.image_128" t-options="{'widget': 'image', 'class': 'rounded o_image_64_max'}" />
 						</td>
 						<td t-if="line.product_id.product_tmpl_id" class='td-product_name' id="prod">
 							<div>
 								<!-- <t t-call="website_sale.cart_line_product_link"> -->
-								<a t-att-href="line.product_id.website_url">
+								<a t-att-href="line.product_id.website_url" t-attf-class="product_name_link">
 									<t t-raw="0"/>
 									<strong t-field="line.product_id.name" />
 									<input type="hidden" class="product_id" name="product_id_id" t-att-value="line.product_id.id"/>
@@ -342,13 +320,13 @@
 							<div class="css_quantity input-group" id="txt" t-att-line_id="line.id" contenteditable="false">
 								<div class="input-group-prepend">
 									<a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
-										<i class="fa fa-minus"></i>
+										<i class="fa fa-minus"/>
 									</a>
 								</div>
 								<input type="text" id="add_qty" class="form-control quantity qty_quote" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id"  t-att-value="int(line.qty)" />
 								<div class="input-group-append">
 									<a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
-										<i class="fa fa-plus"></i>
+										<i class="fa fa-plus"/>
 									</a>
 								</div>
 							</div>
@@ -359,7 +337,7 @@
 		                    </div>
 						</td>
 						<td class="td-action">
-							<a t-attf-href='/quote/delete/#{slug(line)}' title="Remove from cart" class='no-decoration delete_from_cart'> <small><i class='fa fa-trash-o'></i></small></a>
+							<a t-attf-href='/quote/delete/#{slug(line)}' title="Remove from cart" class='no-decoration delete_from_cart'> <small><i class='fa fa-trash-o'/></small></a>
 						</td>
 					</tr>
 				</t>
@@ -414,7 +392,7 @@
 											border: 0;
 											background-color: #e6e6e6;
 											color: #000; display: none;">
-											<i class="fa fa-heart" aria-hidden="true"></i>
+											<i class="fa fa-heart" aria-hidden="true"/>
 											<span>Wish List</span>
 										</a>
 										<!-- ############################################################################ -->
@@ -453,7 +431,7 @@
 											border: 0;
 											background-color: #e6e6e6;
 											color: #000; display: none;">
-                                                        <i class="fa fa-signal" aria-hidden="true"></i>
+                                                        <i class="fa fa-signal" aria-hidden="true"/>
                                                         <span>Compare</span>
                                                     </a>
                                                 </div>
