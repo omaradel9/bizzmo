@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="CRM_mail_activity_tree_view" model="ir.ui.view">
+
+            <field name="name">CRM.mail.activity.tree.view</field>
+            
+            <field name="model">mail.activity</field>
+            
+            <field name="inherit_id" ref="mail.mail_activity_view_tree"/>
+            
+            <field name="arch" type="xml">
+            
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="create">true</attribute>
+                
+                </xpath>
+            
+            </field>
+            
+        </record>
+
+        
+
+        <record id="mail_activity_view_form_inherit" model="ir.ui.view">
+            <field name="name">mail.activity.view.form.inherit</field>
+            <field name="model">mail.activity</field>
+            <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <header>
+                        <button string="Mark As Done" name="action_done" type="object" class="btn-primary" groups="crm_custom.group_validate"/>
+
+                    </header> 
+                </xpath>
+                
+                
+            </field>
+        </record>
+        
+        
+      
+      
+        <record id="crm_activity_planned_action" model="ir.actions.act_window">
+            <field name="name">Planned Activities</field>
+            <field name="res_model">mail.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record> 
+
+
+        <menuitem id="crm_planned_activity_menu" name="Planned Activity" parent="crm.crm_menu_report" action="crm_activity_planned_action" />
+    </data>
+</odoo>
